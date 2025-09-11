@@ -6,7 +6,7 @@ import { Barber } from '@/types/api';
 import { toast } from 'sonner';
 
 // ADICIONADO: URL base do seu backend para servir as imagens
-const API_URL = 'http://localhost:3000';
+const API_URL = import.meta.env.VITE_API_BASE_URL ? import.meta.env.VITE_API_BASE_URL.replace('/api', '') : 'http://localhost:3000';
 
 // ADICIONADO: Função auxiliar para transformar os dados do barbeiro
 const transformBarberData = (barber: Barber): Barber => {
